@@ -1,0 +1,81 @@
+#!/usr/bin/env node
+/*
+ * CLI wrapper for the music generator (Song class)
+ *
+ * Dave Eddy August 30th 2021
+ */
+
+var getopt = require('posix-getopt');
+
+var Song = require('../lib/song.js').Song;
+
+// default options, overridden by CLI opts
+var opts = {
+    bpm: 60,
+    beatsPerBar: 4,
+    transpose: 12,
+    velocityRange: {
+        min: 25,
+        max: 47
+    },
+    sectionLengths: {
+        leftHand: 4,
+        rightHand: 8
+    }
+};
+
+function main() {
+    var options = [
+        'b:(bpm)',
+        'B:(beats-per-bar)',
+        's:(section-lengths)',
+        't:(transpose)',
+        'v:(velocity-range)',
+    ].join('');
+    var parser = new getopt.BasicParser(options, process.argv);
+
+    var n;
+    var option;
+    var sectionLengths = null;
+    var velocityRange = null;
+    while ((option = parser.getopt()) !== undefined) {
+        switch (option.option) {
+            case 'b': opts.bpm = parseInt(option.optarg, 10); break;
+            case 'B': opts.beatsPerBar = parseInt(option.optarg, 10); break;
+            case 's': sectionLengths = option.optarg; break;
+            case 't': opts.transpose = parseInt(option.optarg, 10); break;
+            case 'v': velocityRange = option.optarg; break;
+            default: throw 'bad argument';
+        }
+    }
+    var args = process.argv.slice(parser.optind());
+
+    var pattern = args[0];
+
+    if (!pattern) {
+        console.error('usage: music-generator [opts] <pattern-string>');
+        process.exit(1);
+    }
+    opts.pattern = pattern;
+
+    if (velocityRange) {
+        n = velocityRange.split('-');
+        opts.velocityRange.min = parseInt(n[0], 'n[0]');
+        opts.velocityRange.max = parseInt(n[1], 'n[1]');
+    }
+
+    if (sectionLengths) {
+        n = sectionLengths.split(',');
+        opts.sectionLengths.leftHand = parseInt(n[0], 'n[0]');
+        opts.sectionLengths.rightHand = parseInt(n[1], 'n[1]');
+    }
+
+    console.error(opts);
+    console.error(args);
+
+    var song = new Song(opts);
+
+    console.log(song.getMidiData());
+}
+
+main();
