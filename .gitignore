@@ -1,3 +1,4 @@
 node_modules
 *.mid
 midis/
+.DS_Store
