@@ -26,7 +26,7 @@ var opts = {
     },
     velocityRange: {
         min: 25,
-        max: 47
+        max: 42
     },
     sectionLengths: {
         leftHand: 4,
@@ -93,7 +93,6 @@ function main() {
         console.error('usage: music-generator [opts] <pattern-string>');
         process.exit(1);
     }
-    opts.pattern = pattern;
 
     if (velocityRange) {
         n = parseRange(velocityRange, '-');
@@ -122,6 +121,10 @@ function main() {
     console.error(opts);
 
     var song = new Song(opts);
+
+    song.on('log', console.error);
+
+    song.generate(pattern);
 
     console.log(song.getMidiData());
 }
