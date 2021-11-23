@@ -2,8 +2,12 @@
 /*
  * CLI wrapper for the music generator (Song class)
  *
- * Dave Eddy August 30th 2021
+ * Dave Eddy
+ * August 30th 2021
+ * License: MIT
  */
+
+var f = require('util').format;
 
 var assert = require('assert-plus');
 var getopt = require('posix-getopt');
@@ -35,6 +39,27 @@ var opts = {
     }
 };
 
+function usage() {
+    return [
+        'Usage: music-generator [options] <pattern> > out.mid',
+        '',
+        'Example:',
+        '  music-generator AABA > foo.mid',
+        '',
+        'Options',
+        '  -b, --bpm <num>                     bpm, defaults to ' + opts.bpm,
+        '  -B, --beats-per-bar <num>           beats per bar (like time signature), defaults to ' + opts.beatsPerBar,
+        '  -h, --help                          print this message and exit',
+      f('  -L, --left-hand-range <num-num>     pitch range for the left hand, defaults to %d-%d', opts.leftHandRange.min, opts.leftHandRange.max),
+        '  -r, --root <num>                    left hand root, defaults to ' + opts.leftHandRange.root,
+      f('  -R, --right-hand-range <num-num>    pitch range for the right hand, defaults to %d-%d', opts.rightHandRange.min, opts.rightHandRange.max),
+        '  -s, --sustain                       enable the sustain pedal, defaults to ' + opts.sustain,
+      f('  -S, --section-lengths <left,right>  number of bars per section, defaults to %d,%d', opts.sectionLengths.leftHand, opts.sectionLengths.rightHand),
+        '  -t, --transpose <num>               amount to transpose the song, defaults to ' + opts.transpose,
+      f('  -V, --velocity-range <num-num>      velocity range for each note, defaults to %d-%d', opts.velocityRange.min, opts.velocityRange.max)
+    ].join('\n');
+}
+
 function parseRange(s, c) {
     assert.string(s, 's');
     assert.string(c, 'c');
@@ -58,6 +83,7 @@ function main() {
     var options = [
         'b:(bpm)',
         'B:(beats-per-bar)',
+        'h(help)',
         'L:(left-hand-range)',
         'r:(root)',
         'R:(right-hand-range)',
@@ -78,6 +104,7 @@ function main() {
         switch (option.option) {
             case 'b': opts.bpm = parseInt(option.optarg, 10); break;
             case 'B': opts.beatsPerBar = parseInt(option.optarg, 10); break;
+            case 'h': console.log(usage()); process.exit(0);
             case 'L': leftHandRange = option.optarg; break;
             case 'r': opts.leftHandRange.root = parseInt(option.optarg, 10); break;
             case 'R': rightHandRange = option.optarg; break;
@@ -85,7 +112,7 @@ function main() {
             case 'S': sectionLengths = option.optarg; break;
             case 't': opts.transpose = parseInt(option.optarg, 10); break;
             case 'V': velocityRange = option.optarg; break;
-            default: throw 'bad argument';
+            default: console.error(usage()); process.exit(1);
         }
     }
     var args = process.argv.slice(parser.optind());
