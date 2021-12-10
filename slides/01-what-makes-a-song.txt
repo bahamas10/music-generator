@@ -1,0 +1,31 @@
+centre vcentre
+
+% What makes a song (conceptually)?
+% Breaking down the anatomy of a song
+
+                      ~Song~
+ _____________________________________________________
+|             |              |             |          |
+| Intro       | Verse        | Chorus      | etc...   |
+|_____________|______________|_____________|__________|
+
+A song can be thought of as a collection of ~"sections"~:
+  - Intro
+  - Verse
+  - Chorus
+  - etc.             ~Section~
+ _____________________________________________________
+|             |              |             |          |
+| Bar 1       | Bar 2        | Bar 3       | etc...   |
+|_____________|______________|_____________|__________|
+
+Each section contains ~"bars"~ of notes.
+
+                       ~Bar~
+ _____________________________________________________
+|        |        |        |        |                 |
+| Note 1 | Note 2 | Note 3 | Note 4 | ...             |
+|________|________|________|________|_________________|
+
+And finally, a ~"note"~ is the fundamental building block
+- the indivisible unit.

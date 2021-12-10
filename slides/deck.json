@@ -1,0 +1,12 @@
+{
+  "header": {
+    "centre": "Programatically Generating Piano Music"
+  },
+  "footer": {
+    "left": "Dave Eddy",
+    "right": "www.daveeddy.com"
+  },
+  "fade": {
+    "delay": 15
+  }
+}

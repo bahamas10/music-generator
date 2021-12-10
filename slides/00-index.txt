@@ -1,0 +1,27 @@
+centre vcentre
+o.OOOo.                             o.OOoOoo      o      o
+ O    `o                             O           O      O
+ o      O                            o           o      o
+ O      o                            ooOO        o      o
+ o      O .oOoO' `o   O .oOo.        O       .oOoO  .oOoO  O   o
+ O      o O   o   O   o OooO'        o       o   O  o   O  o   O
+ o    .O' o   O   o  O  O            O       O   o  O   o  O   o
+ OooOO'   `OoO'o  `o'   `OoO'       ooOooOoO `OoO'o `OoO'o `OoOO
+                                                               o
+                                                            OoO'
+     o                                o      o
+    O                                O      O
+    o                                o      o
+    o                                o      o
+.oOoO  .oOoO' `o   O .oOo. .oOo. .oOoO  .oOoO  O   o    .oOo  .oOo. `oOOoOO.
+o   O  O   o   O   o OooO' OooO' o   O  o   O  o   O    O     O   o  O  o  o
+O   o  o   O   o  O  O     O     O   o  O   o  O   o oO o     o   O  o  O  O
+`OoO'o `OoO'o  `o'   `OoO' `OoO' `OoO'o `OoO'o `OoOO Oo `OoO' `OoO'  O  o  o
+                                                   o
+                                                OoO'
+
+% Programmatically Generated Music
+% Calm and Relaxing Piano Music
+
+Dave Eddy
+http://www.daveeddy.com

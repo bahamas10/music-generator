@@ -1,0 +1,24 @@
+centre vcentre
+
+% What makes a song (practically)?
+% Breaking down the anatomy of a song
+
+For our purposes, a piano song is made up of 2 ~tracks~
+- a ~Left Hand~ and a ~Right Hand~.
+
+% 1. Left Hand
+ _____________________________________________________
+|             |              |             |          |
+| Intro       | Verse        | Chorus      | etc...   |
+|_____________|______________|_____________|__________|
+
+% 2. Right Hand
+ _____________________________________________________
+|             |              |             |          |
+| Intro       | Verse        | Chorus      | etc...   |
+|_____________|______________|_____________|__________|
+
+Restriction: As seen above, all tracks must be the same
+length to sync properly.  Even more so, each ~section~
+in each ~track~ must be the same length (contain the same
+number of ~bars~).
