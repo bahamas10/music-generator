@@ -3,7 +3,7 @@ Music Generator
 
 Algorithmically generate music on the terminal
 
-- [Live Stream](https://www.youtube.com/embed/live_stream?channel=UC580SYuIdAIWf8ngzASdKGQ)
+- [5 HOURS of ALGORITHMICALLY GENERATED Piano Music](https://www.youtube.com/watch?v=rUKQYtI4Yaw)
 
 Install
 -------
