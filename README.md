@@ -17,7 +17,7 @@ Install
 -------
 
 ``` console
-git clone git://github.com:bahamas10/music-generator
+git clone git://github.com/bahamas10/music-generator
 cd music-generator
 npm install
 ```
