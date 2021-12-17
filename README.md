@@ -3,7 +3,15 @@ Music Generator
 
 Algorithmically generate music on the terminal
 
-- [5 HOURS of ALGORITHMICALLY GENERATED Piano Music](https://www.youtube.com/watch?v=rUKQYtI4Yaw)
+### Watch on YouTube
+
+**I Made a Computer Program to Generate Piano Music**
+
+[![Code Deep Dive](https://img.youtube.com/vi/v4oRZaSU5E0/hqdefault.jpg)](https://youtu.be/v4oRZaSU5E0)
+
+**5 HOURS of ALGORITHMICALLY GENERATED Piano Music**
+
+[![5 Hours](https://img.youtube.com/vi/rUKQYtI4Yaw/hqdefault.jpg)](https://youtu.be/rUKQYtI4Yaw)
 
 Install
 -------
